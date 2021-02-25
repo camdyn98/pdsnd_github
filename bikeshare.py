@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# these are the raw data files
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -35,7 +36,7 @@ def get_filters():
             break
         else:
             print("Sorry, please try again.")
-       
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
@@ -46,7 +47,7 @@ def get_filters():
             break
         else:
             print("Sorry, please try again.")
-       
+
     print('-'*40)
     return city, month, day
 
@@ -62,7 +63,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a DataFrame
     df = pd.read_csv(CITY_DATA[city])
 
@@ -186,7 +187,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
     # raw data option
     x = 1
     while True:
