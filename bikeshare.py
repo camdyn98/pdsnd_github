@@ -35,7 +35,7 @@ def get_filters():
             break
         else:
             print("Sorry, please try again.")
-       
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
@@ -46,7 +46,7 @@ def get_filters():
             break
         else:
             print("Sorry, please try again.")
-       
+
     print('-'*40)
     return city, month, day
 
@@ -62,7 +62,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a DataFrame
     df = pd.read_csv(CITY_DATA[city])
 
@@ -167,12 +167,12 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types
+    # display counts of user types
     user_types = df.groupby(['User Type'])['User Type'].count()
     print(user_types)
 
     if city != 'washington':
-        # Display counts of gender
+        # display counts of gender
         gen = df.groupby(['gender'])['gender'].count()
         print(gen)
         # Display earliest, most recent, and most common year of birth
@@ -186,7 +186,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
     # raw data option
     x = 1
     while True:
