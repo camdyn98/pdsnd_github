@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# these are the raw data files
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -17,7 +18,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
     while True:
         city = input("\nWhich city would you like to select: Chicago, New York, or Washington?\n")
         city = city.lower()
